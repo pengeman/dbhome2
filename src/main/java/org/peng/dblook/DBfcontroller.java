@@ -55,9 +55,11 @@ public class DBfcontroller implements Initializable {
     public void dbsource_clicked(ActionEvent event) {
         Parent root = null;
         Stage primaryStage = new Stage();
+
         try {
-            URL url = getClass().getResource("/resource_Expired/dbsource.fxml");
+            URL url = getClass().getClassLoader().getResource("dbsource.fxml");
             root = FXMLLoader.load(url);
+
             //root = loader.load();
             primaryStage.setTitle("database look");
             primaryStage.setScene(new Scene(root, 600, 600));
@@ -79,6 +81,8 @@ public class DBfcontroller implements Initializable {
         t_u.prefHeightProperty().bind(pane.heightProperty());
         t_d.prefWidthProperty().bind(pane.widthProperty());
         t_d.prefHeightProperty().bind(pane.heightProperty());
+        table_rs.prefHeightProperty().bind(pane.heightProperty());
+        table_rs.prefWidthProperty().bind(pane.widthProperty());
 
         b_go.setOnAction(new EventHandler<ActionEvent>() {
             @Override

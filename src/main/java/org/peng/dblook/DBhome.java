@@ -31,8 +31,8 @@ public class DBhome extends Application {
     public void start(Stage primaryStage) {
         System.out.println("start....");
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DBf.fxml"));
-        DBfcontroller controller =  loader.getController();
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("DBf.fxml"));
+        //DBfcontroller controller =  loader.getController();
         Parent root = null;
         try {
             //URL url = getClass().getResource("DBf.fxml");

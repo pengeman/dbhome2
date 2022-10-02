@@ -65,7 +65,8 @@ public class DbsourceController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            pro.load(new FileInputStream(this.getClass().getResource("/resource_Expired/dblook.properties").getFile()));
+            URL url2 = getClass().getClassLoader().getResource("dblook.properties");
+            pro.load(new FileInputStream(url2.getFile()));
 
             //得到数据源properties文件,并显示列表
             List<String> projectlist = this.getAllProject();
@@ -139,6 +140,9 @@ public class DbsourceController implements Initializable {
 
     private void btnClose_Click() {
         System.out.println("关闭窗口");
+        Stage stage = (Stage) this.b_confirm.getScene().getWindow();
+        stage.close();
+
     }
 
     private List getAllProject() {
